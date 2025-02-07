@@ -108,6 +108,9 @@ class UserController extends Controller
         ],[
             'oldpassword.required'                 => 'Kötelező megadni a régi jelszót!',
             'newpassword.required'                 => 'Kérem adjon meg egy jelszót!',
+            'newpassword.mixedCase'                 => 'Kis- és nagybetűket is alkalmazzon a jelszó választásánál!',
+            'newpassword.numbers'                  => 'A jelszavában alkalmazzon számokat is!',
+            'newpassword.letters'                  => 'A jelszavában alkalmazzon betűket is!',
             'newpassword.confirmed'                => 'A két jelszó nem egyezik!',
             'newpassword.min'                      => 'A jelszó minimum 8 karakter legyen!',
             'newpassword_confirmation_required.'   => 'Kérem adja meg a jelszót mégegyszer!'
@@ -117,8 +120,8 @@ class UserController extends Controller
             $data                      = User::find(Auth::user()->user_id);
             $data->password            = Hash::make($req->newpassword);
             $data->Save();
-            return view('success', [
-                'msg' => 'Sikeresen megváltoztatta a jelszavát! '.$req->nev]);
+            return redirect('/profil')->withErrors([
+                'sv' => 'Sikeresen megváltoztatta a jelszavát! '.$req->nev ]);
         } else {
             return redirect('/login')->withErrors([
                 'sv'    => "A kívánt oldal megtekintéséhez be kell jelentkezni!"

@@ -2,7 +2,7 @@
 @section('content')
     <div class="container py-3 fs-5 col-md-9">
         @error('sv')
-            <div class="alert alert-danger text-center">{{ $message }}</div>
+            <div class="alert alert-success text-center">{{ $message }}</div>
         @enderror
         <div class="card mx-auto" style="width: 35rem">
             <div class="card-body">

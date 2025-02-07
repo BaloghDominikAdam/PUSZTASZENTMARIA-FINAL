@@ -36,7 +36,7 @@
                 <span class="text-danger">* kötelező megadni</span>
             </div>
             <div class="py-3">
-                <button type="submit" class="btn btn-outline-primary">Beküld</button>
+                <button type="submit" class="btn btn-outline-primary">Regisztráció!</button>
             </div>
 
 

@@ -1,6 +1,9 @@
 @extends('layout')
 @section('content')
     <div class="container py-3 fs-5 col-md-9">
+        @error('sv')
+            <div class="alert alert-success text-center">{{ $message }}</div>
+        @enderror
         <h1 class="text-center display-5">Szia, {{ Auth::user()->nev }} !</h1>
 
         <p><b>Email:</b> <a href="mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</a></p>
